@@ -141,6 +141,18 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
     setLoading(true);
 
     // Validation
+    if (!formData.name.trim()) {
+      setError("Name is required");
+      setLoading(false);
+      return;
+    }
+
+    if (!formData.email.trim()) {
+      setError("Email is required");
+      setLoading(false);
+      return;
+    }
+
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match");
       setLoading(false);
@@ -154,7 +166,7 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
     }
 
     // Guide-specific validation
-    if (formData.role === "guide" && !formData.city) {
+    if (formData.role === "guide" && !formData.city.trim()) {
       setCityError("City is required for guides");
       setLoading(false);
       return;
@@ -163,26 +175,32 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
     // Create FormData object
     const formDataObj = new FormData();
 
+    // Prepare data object with proper validation
+    const dataToSend: any = {
+      name: formData.name.trim(),
+      email: formData.email.trim().toLowerCase(),
+      password: formData.password,
+      role: formData.role.toUpperCase(),
+      bio: formData.bio.trim() || "",
+      languages: formData.languages.length > 0 ? formData.languages : [],
+    };
+
+    // Add role-specific fields
+    if (formData.role === "guide") {
+      dataToSend.city = formData.city.trim();
+      dataToSend.expertise = formData.expertise.length > 0 ? formData.expertise : [];
+      if (formData.dailyRate && formData.dailyRate.trim()) {
+        dataToSend.dailyRate = Number(formData.dailyRate);
+      }
+    } else {
+      dataToSend.travelPreferences = formData.travelPreferences.length > 0 ? formData.travelPreferences : [];
+    }
+
     // Add text fields
-    formDataObj.append(
-      "data",
-      JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-        role: formData.role.toUpperCase(), // Convert to uppercase (TOURIST/GUIDE)
-        bio: formData.bio,
-        languages: formData.languages,
-        expertise: formData.role === "guide" ? formData.expertise : [],
-        dailyRate:
-          formData.role === "guide" && formData.dailyRate
-            ? Number(formData.dailyRate)
-            : undefined,
-        city: formData.role === "guide" ? formData.city : undefined,
-        travelPreferences:
-          formData.role === "tourist" ? formData.travelPreferences : [],
-      })
-    );
+    formDataObj.append("data", JSON.stringify(dataToSend));
+    
+    // Debug: Log the data being sent
+    console.log('Data being sent:', dataToSend);
 
     // Add profile photo if exists
     if (profilePhoto) {
@@ -201,8 +219,18 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
       );
 
       const data = await res.json();
+      
+      // Log the full response for debugging
+      console.log('Registration response:', data);
 
       if (!res.ok || !data.success) {
+        // Show detailed error message if it's a validation error
+        if (data.error && data.error.issues) {
+          const validationErrors = data.error.issues.map((issue: any) => 
+            `${issue.path.join('.')}: ${issue.message}`
+          ).join(', ');
+          throw new Error(`Validation Error: ${validationErrors}`);
+        }
         throw new Error(data.message || "Registration failed");
       }
 

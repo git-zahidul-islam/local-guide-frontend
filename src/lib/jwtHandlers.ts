@@ -10,6 +10,7 @@ export const verifyAccessToken = async (token: string) => {
       process.env.JWT_SECRET!
     ) as jwt.JwtPayload;
 
+
     return {
       success: true,
       message: "Token is valid",
