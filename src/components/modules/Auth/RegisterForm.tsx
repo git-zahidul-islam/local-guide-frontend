@@ -301,22 +301,30 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4 py-12">
-      <div className="w-full max-w-2xl">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 flex items-center justify-center p-4 py-12 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-secondary/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-accent/10 rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      </div>
+      <div className="w-full max-w-2xl relative z-10">
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <MapPin className="w-10 h-10 text-blue-600" />
-            <span className="text-3xl font-bold text-gray-900">LocalGuide</span>
+            <div className="p-2 bg-gradient-to-br from-secondary to-accent rounded-xl shadow-lg">
+              <MapPin className="w-8 h-8 text-white" />
+            </div>
+            <span className="text-3xl font-bold text-white">LocalGuide</span>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl font-bold text-white mb-2">
             Create Your Account
           </h1>
-          <p className="text-gray-600">Start your journey with local experts</p>
+          <p className="text-slate-300">Start your journey with local experts</p>
         </div>
 
         {/* Registration Form */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/20">
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Error Message */}
             {error && (
@@ -391,10 +399,10 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
                     city: "",
                   })
                 }
-                className={`p-4 rounded-xl border-2 transition-all ${
+                className={`p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                   formData.role === "tourist"
-                    ? "border-blue-600 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-primary bg-primary/10 shadow-lg"
+                    : "border-gray-200 hover:border-gray-300 bg-white"
                 }`}
               >
                 <div className="text-center">
@@ -414,10 +422,10 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
                     travelPreferences: [],
                   })
                 }
-                className={`p-4 rounded-xl border-2 transition-all ${
+                className={`p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                   formData.role === "guide"
-                    ? "border-green-600 bg-green-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-secondary bg-secondary/10 shadow-lg"
+                    : "border-gray-200 hover:border-gray-300 bg-white"
                 }`}
               >
                 <div className="text-center">

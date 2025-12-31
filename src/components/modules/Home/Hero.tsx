@@ -121,7 +121,7 @@ export function Hero() {
   });
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white overflow-hidden">
       {/* Animated Background Elements */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
@@ -137,7 +137,7 @@ export function Hero() {
 
       {/* Floating Elements */}
       <motion.div
-        className="absolute top-20 left-10 w-4 h-4 bg-yellow-300 rounded-full opacity-30"
+        className="absolute top-20 left-10 w-4 h-4 bg-secondary/60 rounded-full opacity-40"
         animate={{
           y: [0, -20, 0],
           scale: [1, 1.2, 1],
@@ -149,7 +149,7 @@ export function Hero() {
         }}
       />
       <motion.div
-        className="absolute bottom-40 right-20 w-6 h-6 bg-blue-300 rounded-full opacity-20"
+        className="absolute bottom-40 right-20 w-6 h-6 bg-accent/50 rounded-full opacity-30"
         animate={{
           y: [0, 20, 0],
           scale: [1, 1.3, 1],
@@ -161,7 +161,7 @@ export function Hero() {
         }}
       />
       <motion.div
-        className="absolute top-40 right-1/4 w-3 h-3 bg-green-300 rounded-full opacity-40"
+        className="absolute top-40 right-1/4 w-3 h-3 bg-secondary/70 rounded-full opacity-50"
         animate={{
           y: [0, -15, 0],
           x: [0, 10, 0],
@@ -184,7 +184,7 @@ export function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Explore{" "}
               <motion.span
-                className="inline-block text-yellow-300"
+                className="inline-block text-secondary bg-secondary/10 px-3 py-1 rounded-lg"
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
@@ -194,7 +194,7 @@ export function Hero() {
               <span className="relative">
                 Local
                 <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"
+                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent"
                   animate={{ width: ["0%", "100%", "0%"] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
@@ -207,7 +207,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl mb-12 text-blue-100"
+            className="text-xl md:text-2xl mb-12 text-slate-300"
           >
             Connect with passionate local guides for authentic, personalized
             experiences that go beyond the tourist trail
@@ -225,8 +225,8 @@ export function Hero() {
               <motion.div
                 key={index}
                 className={cn(
-                  "flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20",
-                  currentFeature === index && "bg-white/20"
+                  "flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all",
+                  currentFeature === index && "bg-secondary/20 border-secondary/30"
                 )}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -304,7 +304,7 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleBecomeGuide}
-                className="bg-white hover:bg-gray-50 border-2 border-white text-blue-600 px-6 py-3 rounded-lg font-semibold text-lg relative group overflow-hidden w-full sm:w-auto"
+                className="bg-white hover:bg-slate-50 border-2 border-white text-slate-800 px-6 py-3 rounded-lg font-semibold text-lg relative group overflow-hidden w-full sm:w-auto transition-all hover:shadow-lg"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-50 to-transparent"

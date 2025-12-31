@@ -117,7 +117,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Fixed spacing */}
-      <div className="relative bg-gradient-to-b from-blue-600 to-blue-700 text-white">
+      <div className="relative bg-linear-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="text-center">
@@ -163,7 +163,7 @@ export default function FAQPage() {
                 }}
                 className={`flex items-center px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                   activeCategory === category.id
-                    ? "bg-blue-600 text-white"
+                    ? "bg-primary text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
@@ -255,7 +255,7 @@ export default function FAQPage() {
                     onClick={() => setSearchQuery(topic.label)}
                     className="bg-white rounded-lg p-4 text-center hover:border-blue-300 hover:shadow-sm transition-all duration-300 border border-gray-200"
                   >
-                    <topic.icon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                    <topic.icon className="w-6 h-6 text-primary mx-auto mb-2" />
                     <span className="text-sm font-medium text-gray-900">
                       {topic.label}
                     </span>
@@ -274,7 +274,7 @@ export default function FAQPage() {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <Mail className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <Mail className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium text-gray-900">Email</p>
                     <p className="text-sm text-gray-600">
@@ -283,14 +283,14 @@ export default function FAQPage() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Phone className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <Phone className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium text-gray-900">Phone</p>
                     <p className="text-sm text-gray-600">+1 (555) 123-4567</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Clock className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <Clock className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium text-gray-900">Hours</p>
                     <p className="text-sm text-gray-600">Mon-Fri: 9AM-6PM</p>
@@ -302,7 +302,7 @@ export default function FAQPage() {
             {/* CTA */}
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
               <div className="text-center">
-                <Compass className="w-10 h-10 text-blue-600 mx-auto mb-4" />
+                <Compass className="w-10 h-10 text-primary mx-auto mb-4" />
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   Ready to Explore?
                 </h3>
@@ -311,7 +311,7 @@ export default function FAQPage() {
                 </p>
                 <Link
                   href="/explore"
-                  className="inline-block w-full py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                  className="inline-block w-full py-2.5 bg-primary text-white font-medium rounded-lg hover:bg-primary/80 transition-colors"
                 >
                   Browse Tours
                 </Link>
@@ -333,7 +333,7 @@ export default function FAQPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center justify-center"
+              className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/80 transition-colors inline-flex items-center justify-center"
             >
               <MessageSquare className="w-5 h-5 mr-2" />
               Contact Support

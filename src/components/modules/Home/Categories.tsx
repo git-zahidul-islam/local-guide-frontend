@@ -107,10 +107,10 @@ export async function Categories() {
             <Link
               key={category.name}
               href={`/explore?category=${encodeURIComponent(category.name)}`}
-              className="group bg-gray-50 hover:bg-blue-50 rounded-2xl p-6 text-center cursor-pointer transition-all hover:shadow-lg block"
+              className="group bg-gray-50 hover:bg-accent/10 rounded-2xl p-6 text-center cursor-pointer transition-all hover:shadow-lg block"
             >
-              <div className="bg-white group-hover:bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors">
-                <category.icon className="w-8 h-8 text-blue-600" />
+              <div className="bg-white group-hover:bg-accent/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors">
+                <category.icon className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-1">
                 {category.name}

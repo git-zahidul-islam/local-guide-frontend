@@ -38,37 +38,37 @@ const values = [
     title: "Authentic Experiences",
     description: "Genuine local experiences over tourist traps",
     icon: Target,
-    color: "text-blue-600 bg-blue-50",
+    color: "text-primary bg-primary/10",
   },
   {
     title: "Community First",
     description: "Supporting local economies & empowering guides",
     icon: Users,
-    color: "text-blue-600 bg-blue-50",
+    color: "text-primary bg-primary/10",
   },
   {
     title: "Trust & Safety",
     description: "Verified guides with comprehensive insurance",
     icon: Shield,
-    color: "text-blue-600 bg-blue-50",
+    color: "text-primary bg-primary/10",
   },
   {
     title: "Sustainable Travel",
     description: "Eco-friendly practices in all our tours",
     icon: Globe,
-    color: "text-blue-600 bg-blue-50",
+    color: "text-primary bg-primary/10",
   },
   {
     title: "Quality Excellence",
     description: "Rigorous standards for unforgettable experiences",
     icon: Award,
-    color: "text-blue-600 bg-blue-50",
+    color: "text-primary bg-primary/10",
   },
   {
     title: "Innovation Driven",
     description: "Constantly improving the travel experience",
     icon: Sparkles,
-    color: "text-blue-600 bg-blue-50",
+    color: "text-primary bg-primary/10",
   },
 ];
 
@@ -131,7 +131,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Fixed Blue Theme */}
-      <div className="relative bg-gradient-to-b from-blue-600 to-blue-700 text-white">
+      <div className="relative bg-linear-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="text-center">
@@ -141,13 +141,13 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Discover Local Experiences
             </h1>
-            <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10">
+            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10">
               Connecting curious travelers with passionate local guides since
               2020
             </p>
             <Link
               href="/explore"
-              className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-primary/10 transition-all duration-300"
             >
               <Compass className="w-5 h-5 mr-2" />
               Explore Tours
@@ -175,7 +175,7 @@ export default function AboutPage() {
                     </>
                   ) : (
                     <>
-                      <stat.icon className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600 mb-3" />
+                      <stat.icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary mb-3" />
                       <div className="text-center">
                         <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
                           {stat.value}
@@ -211,7 +211,7 @@ export default function AboutPage() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center px-4 py-2 sm:px-5 sm:py-3 rounded-lg font-medium transition-all duration-300 ${
                 activeTab === tab.id
-                  ? "bg-blue-600 text-white"
+                  ? "bg-primary text-primary-foreground"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -238,22 +238,22 @@ export default function AboutPage() {
                   </p>
 
                   {/* Dynamic Stats Highlight */}
-                  <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
-                    <h3 className="font-semibold text-blue-800 mb-2">
+                  <div className="mb-6 p-4 bg-primary/10 rounded-lg border border-primary/20">
+                    <h3 className="font-semibold text-primary mb-2">
                       Our Impact
                     </h3>
                     <div className="grid grid-cols-2 gap-3">
                       <div className="text-center">
-                        <div className="text-lg font-bold text-blue-600">
+                        <div className="text-lg font-bold text-primary">
                           {loading ? "..." : stats.happyTravelers}
                         </div>
-                        <div className="text-xs text-blue-700">Travelers</div>
+                        <div className="text-xs text-primary/80">Travelers</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-lg font-bold text-blue-600">
+                        <div className="text-lg font-bold text-primary">
                           {loading ? "..." : stats.localGuides}
                         </div>
-                        <div className="text-xs text-blue-700">
+                        <div className="text-xs text-primary/80">
                           Local Guides
                         </div>
                       </div>
@@ -282,9 +282,9 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-blue-50 rounded-xl p-6 sm:p-8">
+                <div className="bg-primary/10 rounded-xl p-6 sm:p-8">
                   <div className="text-center">
-                    <Globe className="w-16 h-16 sm:w-20 sm:h-20 text-blue-600 mx-auto mb-4" />
+                    <Globe className="w-16 h-16 sm:w-20 sm:h-20 text-primary mx-auto mb-4" />
                     <p className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">
                       "Travel isn't about places, it's about perspectives"
                     </p>
@@ -293,19 +293,19 @@ export default function AboutPage() {
                     </p>
 
                     {/* Additional Dynamic Stats */}
-                    <div className="mt-6 pt-6 border-t border-blue-200">
+                    <div className="mt-6 pt-6 border-t border-primary/20">
                       <div className="flex justify-center space-x-6">
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-blue-700">
+                          <div className="text-2xl font-bold text-primary">
                             {loading ? "..." : stats.cities}
                           </div>
-                          <div className="text-xs text-blue-600">Cities</div>
+                          <div className="text-xs text-primary/80">Cities</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-blue-700">
+                          <div className="text-2xl font-bold text-primary">
                             {loading ? "..." : `${stats.fiveStarReviews}%`}
                           </div>
-                          <div className="text-xs text-blue-600">
+                          <div className="text-xs text-primary/80">
                             Satisfaction
                           </div>
                         </div>
@@ -352,7 +352,7 @@ export default function AboutPage() {
                   },
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="bg-blue-100 text-blue-700 px-3 py-1.5 rounded font-semibold text-sm mr-4 flex-shrink-0">
+                    <div className="bg-primary/20 text-primary px-3 py-1.5 rounded font-semibold text-sm mr-4 flex-shrink-0">
                       {item.year}
                     </div>
                     <div>
@@ -366,7 +366,7 @@ export default function AboutPage() {
               </div>
 
               {/* Growth Stats Section */}
-              <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+              <div className="mt-8 p-6 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   Our Growth Milestones
                 </h3>
@@ -376,7 +376,7 @@ export default function AboutPage() {
                       key={index}
                       className="text-center p-3 bg-white/70 rounded-lg"
                     >
-                      <div className="text-2xl font-bold text-blue-600">
+                      <div className="text-2xl font-bold text-primary">
                         {loading ? "..." : stat.value}
                       </div>
                       <div className="text-sm text-gray-600">{stat.label}</div>
@@ -396,7 +396,7 @@ export default function AboutPage() {
                 {values.map((value, index) => (
                   <div
                     key={index}
-                    className="border border-gray-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-sm transition-all duration-300"
+                    className="border border-gray-200 rounded-xl p-5 hover:border-primary/30 hover:shadow-sm transition-all duration-300"
                   >
                     <div
                       className={`inline-flex p-3 rounded-lg mb-4 ${value.color}`}
@@ -412,9 +412,9 @@ export default function AboutPage() {
               </div>
 
               {/* Trust Badge with Dynamic Rating */}
-              <div className="mt-12 p-6 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl text-center">
+              <div className="mt-12 p-6 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl text-center">
                 <div className="inline-flex items-center justify-center p-4 bg-white rounded-full mb-4">
-                  <Shield className="w-8 h-8 text-blue-600" />
+                  <Shield className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Trusted by Travelers Worldwide
@@ -445,8 +445,8 @@ export default function AboutPage() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {teamMembers.map((member, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                      <div className="text-2xl font-bold text-blue-600">
+                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-primary/30 flex items-center justify-center">
+                      <div className="text-2xl font-bold text-primary">
                         {member.name.charAt(0)}
                       </div>
                     </div>
@@ -459,14 +459,14 @@ export default function AboutPage() {
               </div>
 
               {/* Team Stats */}
-              <div className="mt-12 p-6 bg-blue-50 rounded-xl">
+              <div className="mt-12 p-6 bg-primary/10 rounded-xl">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">
                   Driving Our Success
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {dynamicStats.map((stat, index) => (
                     <div key={index} className="text-center p-3">
-                      <div className="text-2xl font-bold text-blue-700">
+                      <div className="text-2xl font-bold text-primary">
                         {loading ? "..." : stat.value}
                       </div>
                       <div className="text-sm text-gray-600">{stat.label}</div>
@@ -480,7 +480,7 @@ export default function AboutPage() {
       </div>
 
       {/* CTA Section - Updated with dynamic stats */}
-      <div className="bg-gradient-to-br from-blue-600 to-blue-700 py-12 sm:py-20 text-white">
+      <div className="bg-gradient-to-br from-primary to-primary/90 py-12 sm:py-20 text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex p-4 bg-white/10 rounded-2xl backdrop-blur-sm mb-6">
             <Compass className="w-12 h-12" />
@@ -488,7 +488,7 @@ export default function AboutPage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             Join Our Growing Community
           </h2>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+          <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
             Be part of the {loading ? "..." : stats.happyTravelers} travelers
             who've discovered authentic local experiences with our{" "}
             {loading ? "..." : stats.localGuides} verified guides
@@ -500,27 +500,27 @@ export default function AboutPage() {
               <div className="text-2xl font-bold">
                 {loading ? "..." : stats.cities}
               </div>
-              <div className="text-sm text-blue-200">Cities</div>
+              <div className="text-sm text-primary-foreground/70">Cities</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold">
                 {loading ? "..." : `${stats.fiveStarReviews}%`}
               </div>
-              <div className="text-sm text-blue-200">Satisfaction Rate</div>
+              <div className="text-sm text-primary-foreground/70">Satisfaction Rate</div>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/explore"
-              className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors inline-flex items-center justify-center"
+              className="px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-primary/10 transition-colors inline-flex items-center justify-center"
             >
               <Compass className="w-5 h-5 mr-2" />
               Browse Experiences
             </Link>
             <Link
               href="/register"
-              className="px-6 py-3 bg-transparent border border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center"
+              className="px-6 py-3 bg-transparent border border-white text-primary-foreground font-semibold rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center"
             >
               <Users className="w-5 h-5 mr-2" />
               Become a Guide

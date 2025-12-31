@@ -117,7 +117,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
   // Show loading state
   if (isLoading || (justLoggedIn && formLoading)) {
     return (
-      <div className="bg-white rounded-2xl shadow-xl p-8">
+      <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/20">
         <div className="text-center py-8">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">
@@ -129,7 +129,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8">
+    <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/20">
       {/* Demo Credentials Buttons - ADD THIS SECTION */}
       <div className="mb-6">
         <p className="text-sm text-gray-500 text-center mb-3">
@@ -145,7 +145,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
                 onClick={() =>
                   fillCredentials(key as keyof typeof demoCredentials)
                 }
-                className={`flex flex-col items-center justify-center p-3 rounded-lg bg-gradient-to-br ${cred.color} text-white hover:opacity-90 transition-opacity`}
+                className="flex flex-col items-center justify-center p-3 rounded-xl bg-gradient-to-br from-secondary to-accent text-white hover:opacity-90 transition-all hover:scale-105 shadow-lg"
                 disabled={formLoading || isLoading}
               >
                 <Icon className="w-5 h-5 mb-1" />
@@ -162,7 +162,8 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
       <form onSubmit={handleLogin} className="space-y-6">
         {/* Error Message */}
         {error && (
-          <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm">
+          <div className="bg-red-50 border border-red-200 text-red-600 p-4 rounded-xl text-sm flex items-center gap-2">
+            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
             {error}
           </div>
         )}
@@ -175,14 +176,14 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
         )}
 
         {/* Email Input - UPDATED to use controlled input */}
-        <div className="relative">
-          <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 mt-3" />
+        <div className="relative group">
+          <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-focus-within:text-primary w-5 h-5 mt-3 transition-colors" />
           <Input
             type="email"
             name="email"
             label="Email Address"
             placeholder="you@example.com"
-            className="pl-12"
+            className="pl-12 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             required
             disabled={formLoading || isLoading}
             value={formData.email}
@@ -244,7 +245,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
           type="submit"
           variant="primary"
           size="lg"
-          className="w-full"
+          className="w-full shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02]"
           disabled={formLoading || isLoading}
         >
           {formLoading ? "Signing in..." : "Sign In"}
@@ -256,7 +257,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
         Don't have an account?{" "}
         <Link
           href="/register"
-          className="text-blue-600 hover:text-blue-700 font-semibold"
+          className="text-primary hover:text-secondary font-semibold transition-colors"
         >
           Sign up
         </Link>

@@ -22,7 +22,7 @@ export function BecomeGuide() {
   return (
     <section
       id="become-guide"
-      className="py-20 bg-gradient-to-r from-green-600 to-green-700 text-white"
+      className="py-20 bg-gradient-to-r from-secondary to-secondary/90 text-secondary-foreground"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -30,7 +30,7 @@ export function BecomeGuide() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Share Your City, Earn Money
             </h2>
-            <p className="text-xl text-green-100 mb-8">
+            <p className="text-xl text-secondary-foreground/80 mb-8">
               Turn your local knowledge into income. Join thousands of guides
               who are sharing their passion and earning on their own terms.
             </p>
@@ -43,7 +43,7 @@ export function BecomeGuide() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">{benefit.title}</h3>
-                    <p className="text-green-100">{benefit.description}</p>
+                    <p className="text-secondary-foreground/80">{benefit.description}</p>
                   </div>
                 </div>
               ))}

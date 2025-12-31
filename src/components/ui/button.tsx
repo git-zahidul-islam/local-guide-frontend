@@ -15,10 +15,10 @@ export function Button({
     "font-semibold rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed";
   const variants = {
     primary:
-      "bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg",
+      "bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-md hover:shadow-lg",
     secondary:
-      "bg-green-600 hover:bg-green-700 text-white shadow-md hover:shadow-lg",
-    outline: "border-2 border-blue-600 text-blue-600 hover:bg-blue-50",
+      "bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg",
+    outline: "border-2 border-primary text-primary hover:bg-accent",
   };
   const sizes: any = {
     default: "h-9 px-4 py-2 has-[>svg]:px-3",

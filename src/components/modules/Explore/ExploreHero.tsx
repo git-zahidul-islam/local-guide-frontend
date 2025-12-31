@@ -2,7 +2,7 @@ import { Search } from "lucide-react";
 
 export default function ExploreHero() {
   return (
-    <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white">
+    <div className="bg-linear-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
