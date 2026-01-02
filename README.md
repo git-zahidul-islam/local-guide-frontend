@@ -8,7 +8,7 @@ A full-stack platform connecting travelers with passionate local experts who off
 
 | Service                    | URL                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Frontend (Live)**        | [](https://local-guide-frontend-rho.vercel.app/)   |
+| **Frontend (Live)**        | [https://local-guide-frontend-chi.vercel.app/](https://local-guide-frontend-chi.vercel.app/)   |
 | **Backend (API Base URL)** | [https://local-guide-backend-j92e.onrender.com/](https://local-guide-backend-j92e.onrender.com/) |
 
 ---
@@ -119,8 +119,8 @@ The platform democratizes travel guiding, making tourism more authentic and comm
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/Sadia492/local-guide-frontend.git
-cd local-guide-platform
+git clone https://github.com/git-zahidul-islam/local-guide-frontend.git
+cd local-guide-frontend
 ```
 
 ### 2️⃣ Install dependencies
@@ -171,8 +171,8 @@ STRIPE_SECRET_KEY=...
 ### **Frontend (.env.local)**
 
 ```
-NEXT_PUBLIC_API_URL=https://local-guide-backend-0p6e.onrender.com
-NEXT_PUBLIC_CLOUDINARY_KEY=...
+NEXT_PUBLIC_API_URL=https://local-guide-backend-j92e.onrender.com
+JWT_SECRET=.......
 ```
 
 ---
