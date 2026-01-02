@@ -289,7 +289,7 @@ export function TopGuides() {
                 </div>
 
                 <div className="mb-4">
-                  <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="inline-block bg-foreground/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
                     {guide.specialty}
                   </span>
                 </div>

@@ -28,13 +28,13 @@ export function Testimonials() {
     },
   ];
   return (
-    <section className="py-20 bg-blue-900 text-white">
+    <section className="py-20 bg-primary text-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What Travelers Say
           </h2>
-          <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+          <p className="text-xl text-secondary/70 max-w-2xl mx-auto">
             Real experiences from real travelers
           </p>
         </div>
@@ -45,7 +45,7 @@ export function Testimonials() {
               key={index}
               className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-colors"
             >
-              <Quote className="w-10 h-10 text-blue-300 mb-4" />
+              <Quote className="w-10 h-10 mb-4" />
 
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -56,7 +56,7 @@ export function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-blue-50 mb-6 leading-relaxed">
+              <p className="text-black mb-6 leading-relaxed">
                 "{testimonial.text}"
               </p>
 
@@ -68,7 +68,7 @@ export function Testimonials() {
                 />
                 <div>
                   <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-blue-200">
+                  <p className="text-sm text-accent-foreground">
                     {testimonial.location}
                   </p>
                 </div>

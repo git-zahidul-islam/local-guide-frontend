@@ -366,7 +366,7 @@ export default function AboutPage() {
               </div>
 
               {/* Growth Stats Section */}
-              <div className="mt-8 p-6 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20">
+              <div className="mt-8 p-6 bg-linear-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   Our Growth Milestones
                 </h3>
@@ -412,7 +412,7 @@ export default function AboutPage() {
               </div>
 
               {/* Trust Badge with Dynamic Rating */}
-              <div className="mt-12 p-6 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl text-center">
+              <div className="mt-12 p-6 bg-linear-to-r from-primary/20 to-primary/10 rounded-xl text-center">
                 <div className="inline-flex items-center justify-center p-4 bg-white rounded-full mb-4">
                   <Shield className="w-8 h-8 text-primary" />
                 </div>
@@ -445,7 +445,7 @@ export default function AboutPage() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {teamMembers.map((member, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-primary/30 flex items-center justify-center">
+                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-linear-to-br from-primary/20 to-primary/30 flex items-center justify-center">
                       <div className="text-2xl font-bold text-primary">
                         {member.name.charAt(0)}
                       </div>
@@ -480,7 +480,7 @@ export default function AboutPage() {
       </div>
 
       {/* CTA Section - Updated with dynamic stats */}
-      <div className="bg-gradient-to-br from-primary to-primary/90 py-12 sm:py-20 text-primary-foreground">
+      <div className="bg-linear-to-br from-primary to-primary/90 py-12 sm:py-20 text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex p-4 bg-white/10 rounded-2xl backdrop-blur-sm mb-6">
             <Compass className="w-12 h-12" />

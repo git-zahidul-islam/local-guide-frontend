@@ -43,8 +43,8 @@ export function WhyChooseUs() {
               key={index}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center"
             >
-              <div className="bg-gradient-to-br from-blue-100 to-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <benefit.icon className="w-8 h-8 text-blue-600" />
+              <div className="bg-gradient-to-br from-primary to-primary/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <benefit.icon className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {benefit.title}

@@ -21,7 +21,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href={"/"} className="flex items-center space-x-2">
-              <MapPin className="w-8 h-8 text-blue-600" />
+              <MapPin className="w-8 h-8 text-secondary" />
               <span className="text-2xl font-bold text-gray-900">
                 LocalGuide
               </span>
@@ -39,7 +39,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href={"/"} className="flex items-center space-x-2">
-            <MapPin className="w-8 h-8 text-blue-600" />
+            <MapPin className="w-8 h-8 text-secondary" />
             <span className="text-2xl font-bold text-gray-900">LocalGuide</span>
           </Link>
 
@@ -48,7 +48,7 @@ export function Navbar() {
             {/* Always show these links */}
             <Link
               href="/explore"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className="text-gray-700 hover:text-secondary font-medium transition-colors"
             >
               Explore Tours
             </Link>
@@ -62,25 +62,25 @@ export function Navbar() {
                   <>
                     <Link
                       href="/about"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       About
                     </Link>
                     <Link
                       href="/faq"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       FAQ
                     </Link>
                     <Link
                       href="/dashboard/guide"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       Dashboard
                     </Link>
                     {/* <Link
                       href="/dashboard/guide/listings"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       My Listings
                     </Link> */}
@@ -91,20 +91,20 @@ export function Navbar() {
                   <>
                     <Link
                       href="/about"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       About
                     </Link>
                     <Link
                       href="/faq"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       FAQ
                     </Link>
 
                     <Link
                       href="/dashboard/admin"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       Admin Dashboard
                     </Link>
@@ -115,20 +115,20 @@ export function Navbar() {
                   <>
                     <Link
                       href="/about"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       About
                     </Link>
                     <Link
                       href="/faq"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       FAQ
                     </Link>
 
                     <Link
                       href="/dashboard/tourist"
-                      className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                      className="text-gray-700 hover:text-secondary font-medium transition-colors"
                     >
                       Dashboard
                     </Link>
@@ -139,7 +139,7 @@ export function Navbar() {
                 {/* {user.role === "TOURIST" && (
                   <Link
                     href="/become-a-guide"
-                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                    className="text-gray-700 hover:text-secondary font-medium transition-colors"
                   >
                     Become a Guide
                   </Link>
@@ -148,7 +148,7 @@ export function Navbar() {
                 {/* Common for all logged in users */}
                 <Link
                   href={`/profile/${user._id || "me"}`}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="text-gray-700 hover:text-secondary font-medium transition-colors"
                 >
                   Profile
                 </Link>
@@ -158,7 +158,7 @@ export function Navbar() {
                   onClick={handleLogout}
                   variant="primary"
                   size="sm"
-                  className="text-gray-700 hover:text-blue-600"
+                  className="text-gray-700 hover:text-secondary"
                 >
                   Logout
                 </Button>
@@ -168,32 +168,32 @@ export function Navbar() {
               <>
                 <Link
                   href="/about"
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="text-gray-700 hover:text-secondary font-medium transition-colors"
                 >
                   About
                 </Link>
                 <Link
                   href="/faq"
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="text-gray-700 hover:text-secondary font-medium transition-colors"
                 >
                   FAQ
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="text-gray-700 hover:text-secondary font-medium transition-colors"
                 >
                   Contact
                 </Link>
 
                 <Link
                   href="/become-guide"
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="text-gray-700 hover:text-secondary font-medium transition-colors"
                 >
                   Become a Guide
                 </Link>
                 <Link
                   href="/login"
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="text-gray-700 hover:text-secondary font-medium transition-colors"
                 >
                   Login
                 </Link>
@@ -226,7 +226,7 @@ export function Navbar() {
             {/* Always show these links */}
             <Link
               href="/explore"
-              className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+              className="block text-gray-700 hover:text-secondary font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Explore Tours
@@ -241,14 +241,14 @@ export function Navbar() {
                   <>
                     <Link
                       href="/dashboard/guide/my-listings"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block text-gray-700 hover:text-secondary font-medium py-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Dashboard
                     </Link>
                     {/* <Link
                       href="/dashboard/guide/listings"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block text-gray-700 hover:text-secondary font-medium py-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       My Listings
@@ -260,20 +260,20 @@ export function Navbar() {
                   <>
                     <Link
                       href="/dashboard/admin/bookings"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block text-gray-700 hover:text-secondary font-medium py-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Admin Dashboard
                     </Link>
                     <Link
                       href="/dashboard/admin/users"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block text-gray-700 hover:text-secondary font-medium py-2"
                     >
                       Manage Users
                     </Link>
                     <Link
                       href="/dashboard/admin/listings"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block text-gray-700 hover:text-secondary font-medium py-2"
                     >
                       Manage Listings
                     </Link>
@@ -284,7 +284,7 @@ export function Navbar() {
                   <>
                     <Link
                       href="/dashboard/tourist/wishlist"
-                      className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                      className="block text-gray-700 hover:text-secondary font-medium py-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Dashboard
@@ -296,7 +296,7 @@ export function Navbar() {
                 {/* {user.role === "TOURIST" && (
                   <Link
                     href="/become-a-guide"
-                    className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                    className="block text-gray-700 hover:text-secondary font-medium py-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Become a Guide
@@ -306,7 +306,7 @@ export function Navbar() {
                 {/* Common for all logged in users */}
                 <Link
                   href={`/profile/${user._id || "me"}`}
-                  className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="block text-gray-700 hover:text-secondary font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Profile
@@ -317,7 +317,7 @@ export function Navbar() {
                   onClick={handleLogout}
                   variant="primary"
                   size="sm"
-                  className="w-full text-gray-700 hover:text-blue-600"
+                  className="w-full text-gray-700 hover:text-secondary"
                 >
                   Logout
                 </Button>
@@ -327,14 +327,14 @@ export function Navbar() {
               <>
                 <Link
                   href="/become-guide"
-                  className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="block text-gray-700 hover:text-secondary font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Become a Guide
                 </Link>
                 <Link
                   href="/login"
-                  className="block text-gray-700 hover:text-blue-600 font-medium py-2"
+                  className="block text-gray-700 hover:text-secondary font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Login
