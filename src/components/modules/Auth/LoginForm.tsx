@@ -119,7 +119,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
     return (
       <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/20">
         <div className="text-center py-8">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-secondary mx-auto"></div>
           <p className="mt-4 text-gray-600">
             {justLoggedIn ? "Logging in..." : "Checking authentication..."}
           </p>
@@ -170,7 +170,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
 
         {/* Debug info - remove in production */}
         {user && (
-          <div className="bg-blue-50 text-blue-600 p-3 rounded-lg text-sm">
+          <div className="bg-blue-50 text-secondary p-3 rounded-lg text-sm">
             You are already logged in as {user.name}. Redirecting...
           </div>
         )}
@@ -228,14 +228,14 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
             <input
               type="checkbox"
               name="remember"
-              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              className="w-4 h-4 text-secondary border-gray-300 rounded focus:ring-secondary"
               disabled={formLoading || isLoading}
             />
             <span className="ml-2 text-sm text-gray-600">Remember me</span>
           </label>
           <Link
             href="/forgot-password"
-            className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+            className="text-sm text-secondary hover:text-secondary font-medium"
           >
             Forgot password?
           </Link>
