@@ -645,7 +645,7 @@ function RegisterClient({ initialRole }: RegisterClientProps) {
                 {/* Daily Rate */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Daily Rate (Optional)
+                    Daily Rate
                   </label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
