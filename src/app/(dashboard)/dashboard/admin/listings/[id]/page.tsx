@@ -346,7 +346,7 @@ const ListingDetails = () => {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium">>
+                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium">
                       {getCategoryIcon(listing.category)}
                       {listing.category}
                     </span>
