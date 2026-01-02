@@ -97,7 +97,7 @@ export default function TourCard({
             <p className="font-semibold text-gray-900">{tour.guide.name}</p>
             <Link
               href={`/profile/${tour.guide._id}`}
-              className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+              className="text-sm text-secondary hover:text-secondary hover:underline"
             >
               View Profile
             </Link>

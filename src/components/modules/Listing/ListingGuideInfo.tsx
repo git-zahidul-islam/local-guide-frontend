@@ -22,7 +22,7 @@ export default function ListingGuideInfo({ guide }: ListingGuideInfoProps) {
         About Your Guide
       </h3>
       <div className="flex items-start gap-4">
-        <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
+        <div className="w-16 h-16 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center">
           <User className="w-8 h-8 text-white" />
         </div>
         <div>
@@ -34,7 +34,7 @@ export default function ListingGuideInfo({ guide }: ListingGuideInfoProps) {
             {guideData.languages?.map((lang) => (
               <span
                 key={lang}
-                className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
+                className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded"
               >
                 {lang}
               </span>
@@ -42,7 +42,7 @@ export default function ListingGuideInfo({ guide }: ListingGuideInfoProps) {
           </div>
           <Link
             href={`/profile/${guideData._id}`}
-            className="inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium text-sm"
+            className="inline-block mt-4 text-secondary hover:text-secondary/80 font-medium text-sm"
           >
             View full profile →
           </Link>

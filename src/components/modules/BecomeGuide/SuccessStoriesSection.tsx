@@ -52,7 +52,7 @@ export default function SuccessStoriesSection() {
                 </div>
               </div>
               <div className="mb-4">
-                <span className="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
+                <span className="inline-block bg-muted text-muted-foreground text-sm font-semibold px-3 py-1 rounded-full">
                   {guide.specialty}
                 </span>
               </div>

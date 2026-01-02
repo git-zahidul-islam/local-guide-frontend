@@ -131,7 +131,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Fixed Blue Theme */}
-      <div className="relative bg-linear-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground">
+      <div className="relative bg-linear-to-br from-secondary via-secondary/90 to-secondary/30 text-primary-foreground">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="text-center">

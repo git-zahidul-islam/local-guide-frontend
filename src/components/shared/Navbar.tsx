@@ -4,6 +4,7 @@ import { MapPin, Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useAuth } from "@/actions/useAuth";
+import Image from "next/image";
 
 export function Navbar() {
   const { user, isLoading, logout } = useAuth();
@@ -21,8 +22,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href={"/"} className="flex items-center space-x-2">
-              <MapPin className="w-8 h-8 text-secondary" />
-              <span className="text-2xl font-bold text-gray-900">
+              <span className="text-2xl font-bold text-secondary">
                 LocalGuide
               </span>
             </Link>
@@ -39,8 +39,9 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href={"/"} className="flex items-center space-x-2">
-            <MapPin className="w-8 h-8 text-secondary" />
-            <span className="text-2xl font-bold text-gray-900">LocalGuide</span>
+            {/* <MapPin className="w-8 h-8 text-secondary" />
+            <span className="text-2xl font-bold text-gray-900">LocalGuide</span> */}
+            <Image src={"/local-guide.png"} height={200} width={200} alt="logo"></Image>
           </Link>
 
           {/* Desktop Navigation */}

@@ -16,7 +16,7 @@ export default function ListingDescription({
       <h3 className="text-xl font-semibold text-gray-900 mb-4">
         About This Tour
       </h3>
-      <div className="prose prose-blue max-w-none">
+      <div className="prose prose-secondary max-w-none">
         <p
           className={`text-gray-700 ${!showFullDescription && "line-clamp-4"}`}
         >
@@ -25,7 +25,7 @@ export default function ListingDescription({
         {description.length > 300 && (
           <button
             onClick={() => setShowFullDescription(!showFullDescription)}
-            className="mt-2 text-blue-600 hover:text-blue-800 font-medium"
+            className="mt-2 text-secondary hover:text-secondary/80 font-medium"
           >
             {showFullDescription ? "Show less" : "Read more"}
           </button>

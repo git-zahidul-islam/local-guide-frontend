@@ -10,7 +10,7 @@ export default function ListingMeetingPoint({
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm border mb-6">
       <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-        <Navigation className="w-5 h-5 text-blue-600" />
+        <Navigation className="w-5 h-5 text-secondary" />
         Meeting Point
       </h3>
       <div className="bg-blue-50 rounded-lg p-4">

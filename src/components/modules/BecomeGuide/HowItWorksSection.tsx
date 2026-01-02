@@ -29,13 +29,13 @@ export default function HowItWorksSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {steps.map((step, index) => (
           <div key={index} className="relative">
-            <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">
+            <div className="bg-secondary text-secondary-foreground w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4">
               {step.number}
             </div>
             <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
             <p className="text-gray-600">{step.description}</p>
             {index < steps.length - 1 && (
-              <div className="hidden lg:block absolute top-6 left-full w-full h-0.5 bg-blue-200 transform translate-x-8"></div>
+              <div className="hidden lg:block absolute top-6 left-full w-full h-0.5 bg-secondary/20 transform translate-x-8"></div>
             )}
           </div>
         ))}

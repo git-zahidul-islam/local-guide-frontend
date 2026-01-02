@@ -33,7 +33,7 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
             className="w-full h-full object-contain"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
+          <div className="w-full h-full bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
             <Compass className="w-20 h-20 text-white/50" />
           </div>
         )}
@@ -44,13 +44,13 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
               onClick={prevImage}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 p-2 rounded-full hover:bg-white transition-colors"
             >
-              <ChevronLeft className="w-6 h-6 text-blue-600" />
+              <ChevronLeft className="w-6 h-6 text-secondary" />
             </button>
             <button
               onClick={nextImage}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 p-2 rounded-full hover:bg-white transition-colors"
             >
-              <ChevronRight className="w-6 h-6 text-blue-600" />
+              <ChevronRight className="w-6 h-6 text-secondary" />
             </button>
           </>
         )}
@@ -65,8 +65,8 @@ export default function ListingGallery({ images, title }: ListingGalleryProps) {
               onClick={() => setSelectedImageIndex(index)}
               className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
                 selectedImageIndex === index
-                  ? "border-blue-600 ring-2 ring-blue-200"
-                  : "border-transparent hover:border-blue-400"
+                  ? "border-secondary ring-2 ring-secondary/20"
+                  : "border-transparent hover:border-secondary/50"
               }`}
             >
               <img

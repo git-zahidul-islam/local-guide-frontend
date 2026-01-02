@@ -118,9 +118,9 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50/30">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
+      <div className="relative overflow-hidden bg-gradient-to-br from-secondary to-accent text-secondary-foreground">
         <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
@@ -132,7 +132,7 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               We're Here to <span className="text-yellow-300">Help</span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-secondary-foreground/80 max-w-2xl mx-auto">
               Have questions, suggestions, or need assistance? Our team is ready
               to help you make the most of your travel experiences.
             </p>
@@ -179,7 +179,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-3xl shadow-xl p-8">
               <div className="flex items-center mb-8">
-                <div className="p-3 bg-blue-100 text-blue-600 rounded-xl mr-4">
+                <div className="p-3 bg-muted text-secondary rounded-xl mr-4">
                   <Send className="w-6 h-6" />
                 </div>
                 <div>
@@ -224,7 +224,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
@@ -238,7 +238,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-colors"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -255,7 +255,7 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-colors"
                       placeholder="How can we help?"
                     />
                   </div>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                       name="department"
                       value={formData.department}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-colors bg-white"
                     >
                       <option value="">Select Department</option>
                       <option value="support">Customer Support</option>
@@ -288,7 +288,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-colors resize-none"
                     placeholder="Tell us how we can help you..."
                   ></textarea>
                 </div>
@@ -296,7 +296,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="w-full py-4 bg-gradient-to-r from-secondary to-accent text-secondary-foreground font-bold rounded-xl hover:from-secondary/90 hover:to-accent/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {isSubmitting ? (
                     <>
@@ -335,7 +335,7 @@ export default function ContactPage() {
                     </p>
                     <Link
                       href={`mailto:${dept.email}`}
-                      className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center"
+                      className="text-secondary hover:text-secondary/80 text-sm font-medium inline-flex items-center"
                     >
                       <Mail className="w-4 h-4 mr-2" />
                       {dept.email}
@@ -346,15 +346,15 @@ export default function ContactPage() {
             </div>
 
             {/* FAQ Link */}
-            <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-br from-secondary to-accent rounded-3xl p-8 text-secondary-foreground">
               <h3 className="text-xl font-bold mb-4">Common Questions?</h3>
-              <p className="text-blue-100 mb-6">
+              <p className="text-secondary-foreground/80 mb-6">
                 Check our FAQ section for quick answers to frequently asked
                 questions.
               </p>
               <Link
                 href="/faq"
-                className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-background text-foreground font-bold rounded-xl hover:bg-background/90 transition-colors"
               >
                 <MessageSquare className="w-5 h-5 mr-3" />
                 Visit FAQ Page

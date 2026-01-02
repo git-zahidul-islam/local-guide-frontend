@@ -46,7 +46,7 @@ export default function BenefitsSection() {
             key={index}
             className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
           >
-            <div className="text-blue-600 mb-4">{benefit.icon}</div>
+            <div className="text-secondary mb-4">{benefit.icon}</div>
             <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
             <p className="text-gray-600">{benefit.description}</p>
           </div>

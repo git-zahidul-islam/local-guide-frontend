@@ -205,10 +205,10 @@ const ListingDetails = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-muted to-background flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-blue-700 font-medium">Loading tour details...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-secondary mx-auto mb-4"></div>
+          <p className="text-foreground font-medium">Loading tour details...</p>
         </div>
       </div>
     );
@@ -216,7 +216,7 @@ const ListingDetails = () => {
 
   if (error || !listing) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-6">
+      <div className="min-h-screen bg-gradient-to-b from-muted to-background flex items-center justify-center p-6">
         <div className="max-w-md text-center">
           <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
             <Shield className="w-8 h-8 text-red-600" />
@@ -230,7 +230,7 @@ const ListingDetails = () => {
           </p>
           <Link
             href="/explore"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-colors"
           >
             <Compass className="w-5 h-5" />
             Explore Other Tours
@@ -243,14 +243,14 @@ const ListingDetails = () => {
   const dateOptions = getNextWeekDates();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Back Navigation */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-4">
             <Link
               href="/explore"
-              className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground font-medium"
             >
               <ChevronLeft className="w-5 h-5" />
               Back to Tours
@@ -261,7 +261,7 @@ const ListingDetails = () => {
                 className={`p-2 rounded-lg transition-colors ${
                   wishlisted
                     ? "bg-red-50 text-red-600"
-                    : "bg-blue-50 text-blue-600 hover:bg-blue-100"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
                 }`}
               >
                 <Heart
@@ -270,7 +270,7 @@ const ListingDetails = () => {
               </button>
               <button
                 onClick={handleShare}
-                className="p-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
+                className="p-2 bg-muted text-muted-foreground rounded-lg hover:bg-muted/80 transition-colors"
               >
                 <Share2 className="w-5 h-5" />
               </button>
@@ -291,7 +291,7 @@ const ListingDetails = () => {
                 className="w-full h-full object-contain"
               />
             ) : (
-              <div className="w-full h-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
+              <div className="w-full h-full bg-gradient-to-r from-secondary to-accent flex items-center justify-center">>
                 <Compass className="w-20 h-20 text-white/50" />
               </div>
             )}
@@ -302,13 +302,13 @@ const ListingDetails = () => {
                   onClick={prevImage}
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 p-2 rounded-full hover:bg-white transition-colors"
                 >
-                  <ChevronLeft className="w-6 h-6 text-blue-600" />
+                  <ChevronLeft className="w-6 h-6 text-secondary" />
                 </button>
                 <button
                   onClick={nextImage}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 p-2 rounded-full hover:bg-white transition-colors"
                 >
-                  <ChevronRight className="w-6 h-6 text-blue-600" />
+                  <ChevronRight className="w-6 h-6 text-secondary" />
                 </button>
               </>
             )}
@@ -323,8 +323,8 @@ const ListingDetails = () => {
                   onClick={() => setSelectedImageIndex(index)}
                   className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
                     selectedImageIndex === index
-                      ? "border-blue-600 ring-2 ring-blue-200"
-                      : "border-transparent hover:border-blue-400"
+                      ? "border-secondary ring-2 ring-secondary/20"
+                      : "border-transparent hover:border-secondary/50"
                   }`}
                 >
                   <img
@@ -346,7 +346,7 @@ const ListingDetails = () => {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium">>
                       {getCategoryIcon(listing.category)}
                       {listing.category}
                     </span>
@@ -367,11 +367,11 @@ const ListingDetails = () => {
                   </h1>
                   <div className="flex items-center gap-4 text-gray-600">
                     <div className="flex items-center gap-1">
-                      <MapPin className="w-5 h-5 text-blue-500" />
+                      <MapPin className="w-5 h-5 text-secondary" />
                       <span className="font-medium">{listing.city}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <User className="w-5 h-5 text-blue-500" />
+                      <User className="w-5 h-5 text-secondary" />
                       <span>by {listing.guide?.name || "Local Guide"}</span>
                     </div>
                   </div>
@@ -385,36 +385,36 @@ const ListingDetails = () => {
                 Tour Highlights
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <Clock className="w-6 h-6 text-blue-600" />
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="w-12 h-12 bg-muted/80 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Clock className="w-6 h-6 text-secondary" />
                   </div>
                   <p className="text-sm text-gray-600">Duration</p>
                   <p className="font-bold text-gray-900">
                     {listing.duration} hours
                   </p>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <Users className="w-6 h-6 text-blue-600" />
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="w-12 h-12 bg-muted/80 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Users className="w-6 h-6 text-secondary" />
                   </div>
                   <p className="text-sm text-gray-600">Group Size</p>
                   <p className="font-bold text-gray-900">
                     Max {listing.maxGroupSize}
                   </p>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <Globe className="w-6 h-6 text-blue-600" />
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="w-12 h-12 bg-muted/80 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Globe className="w-6 h-6 text-secondary" />
                   </div>
                   <p className="text-sm text-gray-600">Language</p>
                   <p className="font-bold text-gray-900">
                     {listing.language || "English"}
                   </p>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <Award className="w-6 h-6 text-blue-600" />
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="w-12 h-12 bg-muted/80 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Award className="w-6 h-6 text-secondary" />
                   </div>
                   <p className="text-sm text-gray-600">Category</p>
                   <p className="font-bold text-gray-900">{listing.category}</p>
@@ -427,7 +427,7 @@ const ListingDetails = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 About This Tour
               </h3>
-              <div className="prose prose-blue max-w-none">
+              <div className="prose prose-secondary max-w-none">
                 <p
                   className={`text-gray-700 ${
                     !showFullDescription && "line-clamp-4"
@@ -438,7 +438,7 @@ const ListingDetails = () => {
                 {listing.description.length > 300 && (
                   <button
                     onClick={() => setShowFullDescription(!showFullDescription)}
-                    className="mt-2 text-blue-600 hover:text-blue-800 font-medium"
+                    className="mt-2 text-secondary hover:text-secondary/80 font-medium"
                   >
                     {showFullDescription ? "Show less" : "Read more"}
                   </button>
@@ -449,10 +449,10 @@ const ListingDetails = () => {
             {/* Meeting Point */}
             <div className="bg-white rounded-xl p-6 shadow-sm border mb-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <Navigation className="w-5 h-5 text-blue-600" />
+                <Navigation className="w-5 h-5 text-secondary" />
                 Meeting Point
               </h3>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-muted rounded-lg p-4">
                 <p className="text-gray-800 font-medium">
                   {listing.meetingPoint}
                 </p>
@@ -466,11 +466,11 @@ const ListingDetails = () => {
             {/* Itinerary */}
             <div className="bg-white rounded-xl p-6 shadow-sm border">
               <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <Map className="w-5 h-5 text-blue-600" />
+                <Map className="w-5 h-5 text-secondary" />
                 Tour Itinerary
               </h3>
               <div className="space-y-4">
-                <div className="bg-blue-50 rounded-lg p-4">
+                <div className="bg-muted rounded-lg p-4">
                   <p className="text-gray-700 whitespace-pre-line">
                     {listing.itinerary ||
                       "Detailed itinerary will be provided upon booking."}
@@ -489,7 +489,7 @@ const ListingDetails = () => {
                   About Your Guide
                 </h3>
                 <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center">
                     <User className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -504,7 +504,7 @@ const ListingDetails = () => {
                       {listing.guide?.languages?.map((lang) => (
                         <span
                           key={lang}
-                          className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
+                          className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded"
                         >
                           {lang}
                         </span>
@@ -512,7 +512,7 @@ const ListingDetails = () => {
                     </div>
                     <Link
                       href={`/profile/${listing.guide?._id}`}
-                      className="inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium text-sm"
+                      className="inline-block mt-4 text-secondary hover:text-secondary/80 font-medium text-sm"
                     >
                       View full profile →
                     </Link>
@@ -525,20 +525,20 @@ const ListingDetails = () => {
       </div>
 
       {/* Footer CTA */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white mt-12">
+      <div className="bg-gradient-to-r from-secondary to-accent text-secondary-foreground mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">
               Ready for an unforgettable experience?
             </h2>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-secondary-foreground/80 mb-8 max-w-2xl mx-auto">
               Book your spot now and explore {listing.city} like never before
               with a passionate local guide.
             </p>
             <button
               onClick={handleBookNow}
               disabled={!listing.isActive}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition-all disabled:opacity-50"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-background text-foreground font-bold rounded-lg hover:bg-background/90 transition-all disabled:opacity-50"
             >
               <Calendar className="w-5 h-5" />
               {listing.isActive

@@ -117,7 +117,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Fixed spacing */}
-      <div className="relative bg-linear-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground">
+      <div className="relative bg-linear-to-br from-secondary via-secondary/90 to-secondary/30 text-primary-foreground">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="text-center">
@@ -134,13 +134,13 @@ export default function FAQPage() {
             {/* Search Bar */}
             <div className="max-w-xl mx-auto">
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Search for answers..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 rounded-lg text-white outline-none ring-2 ring-blue-500 "
+                  className="w-full pl-12 pr-4 py-3 rounded-lg text-white outline-none ring-2 ring-secondary"
                 />
               </div>
             </div>

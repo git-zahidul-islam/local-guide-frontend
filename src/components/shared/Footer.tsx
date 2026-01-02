@@ -8,6 +8,7 @@ import {
   Heart,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -18,8 +19,7 @@ export function Footer() {
           {/* Brand & Description */}
           <div className="md:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <MapPin className="w-8 h-8 text-secondary" />
-              <span className="text-2xl font-bold text-white">LocalGuide</span>
+              <Image src={"/local-guide.png"} height={200} width={200} alt="logo"></Image>
             </div>
             <p className="text-gray-400 mb-6">
               Connecting travelers with local experts for authentic experiences

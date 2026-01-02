@@ -19,7 +19,7 @@ export default function ListingReviews({
     return (
       <div className="bg-white rounded-xl p-6 shadow-sm border mt-6">
         <div className="flex justify-center py-8">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-secondary"></div>
         </div>
       </div>
     );
@@ -104,7 +104,7 @@ export default function ListingReviews({
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary to-accent flex items-center justify-center text-white font-bold">
                       {review.user.name?.charAt(0) || "T"}
                     </div>
                     <div>
@@ -143,7 +143,7 @@ export default function ListingReviews({
             <div className="mt-6 text-center">
               <button
                 onClick={() => setShowAllReviews(!showAllReviews)}
-                className="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+                className="px-6 py-2 border border-secondary text-secondary rounded-lg hover:bg-muted transition-colors"
               >
                 {showAllReviews
                   ? "Show Less Reviews"

@@ -54,7 +54,7 @@ export default function ListingHeader({
       <div className="flex items-start justify-between mb-4">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+            <span className="inline-flex items-center gap-1 px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium">
               {getCategoryIcon(category)}
               {category}
             </span>
@@ -75,11 +75,11 @@ export default function ListingHeader({
           </h1>
           <div className="flex items-center gap-4 text-gray-600">
             <div className="flex items-center gap-1">
-              <MapPin className="w-5 h-5 text-blue-500" />
+              <MapPin className="w-5 h-5 text-secondary" />
               <span className="font-medium">{city}</span>
             </div>
             <div className="flex items-center gap-1">
-              <User className="w-5 h-5 text-blue-500" />
+              <User className="w-5 h-5 text-secondary" />
               <span>by {guideName}</span>
             </div>
           </div>

@@ -50,7 +50,7 @@ export default function ListingActions({ listingId }: ListingActionsProps) {
         <div className="flex items-center justify-between py-4">
           <Link
             href="/explore"
-            className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground font-medium"
           >
             <ChevronLeft className="w-5 h-5" />
             Back to Tours
@@ -62,7 +62,7 @@ export default function ListingActions({ listingId }: ListingActionsProps) {
               className={`p-2 rounded-lg transition-all relative ${
                 isInWishlist
                   ? "bg-red-50 text-red-600 hover:bg-red-100"
-                  : "bg-blue-50 text-blue-600 hover:bg-blue-100"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
               } disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               {wishlistLoading ? (
@@ -80,7 +80,7 @@ export default function ListingActions({ listingId }: ListingActionsProps) {
             </button>
             <button
               onClick={handleShare}
-              className="p-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
+              className="p-2 bg-muted text-muted-foreground rounded-lg hover:bg-muted/80 transition-colors"
             >
               <Share2 className="w-5 h-5" />
             </button>

@@ -89,14 +89,14 @@ export default function ListingBookingWidget({
     <div className="">
       <div className="bg-white rounded-xl shadow-lg border overflow-hidden">
         {/* Price Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
+        <div className="bg-gradient-to-r from-secondary to-accent p-6 text-secondary-foreground">
           <div className="flex items-center justify-between mb-2">
             <div className="text-3xl font-bold">${listing.fee}</div>
             <div className="text-sm bg-white/20 px-3 py-1 rounded-full">
               per person
             </div>
           </div>
-          <p className="text-blue-100">All fees and taxes included</p>
+          <p className="text-secondary-foreground/80">All fees and taxes included</p>
         </div>
 
         <div className="p-6">
@@ -117,7 +117,7 @@ export default function ListingBookingWidget({
                 </p>
               </div>
 
-              <div className="bg-blue-50 rounded-lg p-4 mb-4">
+              <div className="bg-muted rounded-lg p-4 mb-4">
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Status:</span>
@@ -142,7 +142,7 @@ export default function ListingBookingWidget({
 
               <Link
                 href={`/dashboard/tourist/my-trips`}
-                className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors block text-center mb-3"
+                className="w-full py-3 bg-secondary text-secondary-foreground font-semibold rounded-lg hover:bg-secondary/90 transition-colors block text-center mb-3"
               >
                 Manage Booking
               </Link>
@@ -176,7 +176,7 @@ export default function ListingBookingWidget({
                     timeIntervals={60}
                     timeCaption="Time"
                     dateFormat="MMMM d, yyyy h:mm aa"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary bg-white"
                     placeholderText="Select date and time"
                   />
                 </div>
@@ -246,7 +246,7 @@ export default function ListingBookingWidget({
                 <div className="flex justify-between items-center mt-4 pt-4 border-t">
                   <span className="text-lg font-bold text-gray-900">Total</span>
                   <div>
-                    <div className="text-2xl font-bold text-blue-600">
+                    <div className="text-2xl font-bold text-secondary">
                       ${totalPrice}
                     </div>
                     <div className="text-sm text-gray-500">USD</div>
@@ -259,7 +259,7 @@ export default function ListingBookingWidget({
                 <div className="space-y-3">
                   <Link
                     href={`/login?redirect=/tours/${listingId}`}
-                    className="block w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md hover:shadow-lg text-center"
+                    className="block w-full py-4 bg-gradient-to-r from-secondary to-accent text-secondary-foreground font-semibold rounded-lg hover:from-secondary/90 hover:to-accent/90 transition-all shadow-md hover:shadow-lg text-center"
                   >
                     <Calendar className="w-5 h-5 inline mr-2" />
                     Login to Book
@@ -278,7 +278,7 @@ export default function ListingBookingWidget({
                     bookingLoading ||
                     !isBookingAllowed()
                   }
-                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg flex items-center justify-center"
+                  className="w-full py-4 bg-gradient-to-r from-secondary to-accent text-secondary-foreground font-semibold rounded-lg hover:from-secondary/90 hover:to-accent/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg flex items-center justify-center"
                 >
                   {bookingLoading ? (
                     <>
@@ -309,7 +309,7 @@ export default function ListingBookingWidget({
 
               {/* Booking Summary */}
               {selectedDate && (
-                <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                <div className="mt-6 p-4 bg-muted rounded-lg">
                   <h4 className="font-medium text-gray-900 mb-2">
                     Booking Summary
                   </h4>
