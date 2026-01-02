@@ -291,7 +291,7 @@ const ListingDetails = () => {
                 className="w-full h-full object-contain"
               />
             ) : (
-              <div className="w-full h-full bg-gradient-to-r from-secondary to-accent flex items-center justify-center">>
+              <div className="w-full h-full bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
                 <Compass className="w-20 h-20 text-white/50" />
               </div>
             )}
