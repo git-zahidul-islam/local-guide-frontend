@@ -209,13 +209,12 @@ export default function MyTripsClient({
     });
     return sortTripsByDate(filtered);
   }, [trips, searchTerm, statusFilter, guides]);
-
   // Handle Pay Now button click
   const handlePayNow = async (bookingId: string) => {
     try {
       setProcessingPayment(bookingId);
 
-      // Use the client-side service
+      // Use the client-side service (userId is handled by auth middleware)
       const result = await paymentService.createPayment(bookingId);
 
       if (!result.success) {
@@ -223,8 +222,8 @@ export default function MyTripsClient({
       }
 
       // Redirect to Stripe payment page
-      if (result.paymentUrl) {
-        window.location.href = result.paymentUrl;
+      if (result.data.checkoutUrl) {
+        window.location.href = result.data.checkoutUrl;
       } else {
         throw new Error("No payment URL returned");
       }

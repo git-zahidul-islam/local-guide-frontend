@@ -191,24 +191,25 @@ const ReviewDialog: React.FC<ReviewDialogProps> = ({
               variant="outline"
               onClick={() => onOpenChange(false)}
               disabled={loading}
+              className="px-4 py-1"
             >
               Cancel
             </Button>
             <Button
               type="submit"
-              className="bg-green-600 hover:bg-green-700"
+              className="bg-green-600 hover:bg-green-700 px-4 py-1"
               disabled={loading}
             >
               {loading ? (
-                <>
+                <div className="flex gap-1 items-center">
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Submitting...
-                </>
+                </div>
               ) : (
-                <>
+                <div className="flex gap-1 items-center">
                   <MessageSquare className="mr-2 h-4 w-4" />
                   Submit Review
-                </>
+                </div>
               )}
             </Button>
           </DialogFooter>
