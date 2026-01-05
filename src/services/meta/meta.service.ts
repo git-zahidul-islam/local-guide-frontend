@@ -248,35 +248,25 @@ export const getChartData = async (): Promise<ChartData> => {
 };
 export const fetchDashboard = async () => {
   try {
-    // Try different endpoint variations for guide dashboard
-    const endpoints = [
-      `${process.env.NEXT_PUBLIC_API_URL}/api/guide/dashboard`,
-      `${process.env.NEXT_PUBLIC_API_URL}/api/dashboard/guide`,
-      `${process.env.NEXT_PUBLIC_API_URL}/api/users/dashboard/guide`,
+    const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/meta/dashboard`,
-    ];
-
-    let response;
-    for (const endpoint of endpoints) {
-      try {
-        response = await fetch(endpoint, {
-          credentials: "include",
-        });
-        if (response.ok) {
-          const data = await response.json();
-          if (data.success) {
-            return data.data; // Return the transformed data for guide
-          }
-        }
-      } catch (error) {
-        console.log("Failed with endpoint:", endpoint);
+      {
+        credentials: "include",
       }
-    }
-    throw new Error(
-      "Failed to fetch guide dashboard: 404 - Endpoint not found"
     );
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch dashboard: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    if (data.success) {
+      return data.data;
+    }
+    
+    throw new Error(data.message || "Failed to fetch dashboard data");
   } catch (error) {
-    console.error("Error fetching guide dashboard:", error);
+    console.error("Error fetching dashboard:", error);
     throw error;
   }
 };

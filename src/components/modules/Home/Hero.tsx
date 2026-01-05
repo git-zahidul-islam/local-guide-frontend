@@ -260,7 +260,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
           >
-            <motion.div
+            {/* <motion.div
               animate={{
                 scale: pulse ? [1, 1.05, 1] : 1,
                 boxShadow: pulse
@@ -295,9 +295,9 @@ export function Hero() {
                   </span>
                 </Button>
               </Link>
-            </motion.div>
+            </motion.div> */}
 
-            <Link href="/become-guide" className="block">
+            
               <motion.button
                 type="button"
                 id="become-guide-btn"
@@ -312,12 +312,13 @@ export function Hero() {
                   whileHover={{ x: "100%" }}
                   transition={{ duration: 0.6 }}
                 />
+                <Link href="/become-guide" className="block">
                 <span className="relative flex items-center">
                   <Play className="w-4 h-4 mr-2" />
                   Become a Guide
                 </span>
+                </Link>
               </motion.button>
-            </Link>
           </motion.div>
         </div>
       </div>
