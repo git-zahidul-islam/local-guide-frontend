@@ -8,7 +8,7 @@ import { TopGuides } from "@/components/modules/Home/TopGuides";
 import { WhyChooseUs } from "@/components/modules/Home/WhyChooseUs";
 
 export const metadata = {
-  title: "Home | My Portfolio",
+  title: "Home | Local Guide",
 };
 
 export default function HomePage() {

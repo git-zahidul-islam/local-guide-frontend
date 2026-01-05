@@ -298,7 +298,7 @@ export function TopGuides() {
                   <span className="text-lg font-bold text-gray-900">
                     {getHourlyRate(guide.dailyRate)}
                   </span>
-                  <Link href={`/profile/${guide._id}`}>
+                  <Link href={`#`}>
                     <Button variant="primary" size="sm">
                       View Profile
                     </Button>

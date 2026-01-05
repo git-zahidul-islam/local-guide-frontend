@@ -129,7 +129,13 @@ export default function Sidebar() {
 
   // Check if link is active
   const isActive = (href: string) => {
-    return pathname === href || pathname.startsWith(href + "/");
+    if (href === pathname) return true;
+    // For dashboard root paths, only match exact path
+    if (href.endsWith('/dashboard/guide') || href.endsWith('/dashboard/tourist') || href.endsWith('/dashboard/admin')) {
+      return pathname === href;
+    }
+    // For other paths, check if pathname starts with href
+    return pathname.startsWith(href + '/');
   };
 
   const navItems = getNavItems();
