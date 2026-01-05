@@ -1,12 +1,16 @@
 export interface PaymentResponse {
-  paymentUrl: string;
-  success: boolean;
-  message?: string;
+  data: {
+    checkoutUrl: string;
+    sessionId: string;
+  },
+  success: boolean,
+  message: string,
+  statusCode: number,
 }
 
 export const paymentService = {
   // Create payment session - CLIENT SIDE
-  async createPayment(bookingId: string): Promise<PaymentResponse> {
+  async createPayment(bookingId: string) : Promise<PaymentResponse> {
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/booking/${bookingId}/create-payment`,
@@ -29,34 +33,36 @@ export const paymentService = {
       if (!data.success) {
         throw new Error(data.message || "Failed to create payment");
       }
-
+      // 
       return {
-        paymentUrl: data.data.paymentUrl,
-        success: true,
+        success: data.success,
+        message: data.message,
+        statusCode: data.statusCode,
+        data: {
+          checkoutUrl: data.data.paymentUrl,
+          sessionId: data.data.sessionId,
+        },
       };
     } catch (error) {
       console.error("Error creating payment:", error);
-      return {
-        paymentUrl: "",
-        success: false,
-        message:
-          error instanceof Error ? error.message : "Unknown error occurred",
-      };
+      throw error
     }
   },
 
   // Check payment status
   async checkPaymentStatus(
     sessionId: string
-  ): Promise<{ status: string; message?: string }> {
+  ): Promise<{ success: string; }> {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/payment/status/${sessionId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/payment/confirm`,
         {
           credentials: "include",
           headers: {
             "Content-Type": "application/json",
           },
+          method: "POST",
+          body: JSON.stringify({ sessionId }),
         }
       );
 
@@ -65,10 +71,10 @@ export const paymentService = {
       }
 
       const data = await response.json();
-      return { status: data.status, message: data.message };
+      return { success: data.success ? "true" : "false" };
     } catch (error) {
       console.error("Error checking payment status:", error);
-      return { status: "error", message: "Failed to check payment status" };
+      return { success: "error" };
     }
   },
 };
