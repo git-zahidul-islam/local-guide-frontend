@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { MapPin, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { getFeaturedCities } from "@/services/listing/listing.service";
 
 export function FeaturedCities() {
   type City = {
@@ -64,61 +65,30 @@ export function FeaturedCities() {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/listing`
-        );
+        const apiCities = await getFeaturedCities();
+        
+        // Transform API data to match our component structure
+        const transformedCities = apiCities.map((item: any) => ({
+          _id: item._id,
+          city: item.city,
+          country: "Bangladesh", // Default country as requested
+          guides: Math.floor(Math.random() * 50) + 25, // Random suitable number 25-75
+          image: item.image,
+        }));
 
-        if (!response.ok) {
-          throw new Error(`API error: ${response.status}`);
-        }
-
-        const result = await response.json();
-        console.log("API Response:", result);
-
-        // Check if the response has the expected structure
-        if (!result.success || !result.data) {
-          throw new Error("Invalid API response structure");
-        }
-
-        // Use the data property from the response
-        const apiData = result.data;
-
-        // Filter for only the 4 target cities and transform the data
-        const filteredCities = apiData
-          .filter((item: any) => targetCities.includes(item.city))
-          .map((item: any) => ({
-            _id: item._id,
-            city: item.city,
-            // Get country from your helper function
-            country: getCountryFromCity(item.city),
-            // Count how many tours this guide has for this city
-            // Or use a default value if you don't have guide count
-            guides: countToursPerCity(apiData, item.city),
-            image: item.images?.[0] || getCityImage(item.city),
-            // Keep the full tour data if you need it later
-            tourData: item,
-          }));
-
-        console.log("Filtered cities:", filteredCities);
-
-        // Ensure we have exactly 4 cities, use fallback for any missing
-        const finalCities = targetCities.map((cityName) => {
-          const apiCity = filteredCities.find((c: any) => c.city === cityName);
-          if (apiCity) return apiCity;
-
-          // Fallback if API doesn't have this city
-          return (
-            fallbackCities.find((c) => c.city === cityName) || {
-              _id: cityName,
-              city: cityName,
-              country: getCountryFromCity(cityName),
-              guides: Math.floor(Math.random() * 100) + 50,
-              image: getCityImage(cityName),
-            }
-          );
+        // Combine API cities with fallback cities, prioritizing API data
+        const combinedCities = [...transformedCities];
+        
+        // Add fallback cities if we need more to reach 4 cities
+        targetCities.forEach(cityName => {
+          if (!combinedCities.find(c => c.city === cityName)) {
+            const fallback = fallbackCities.find(c => c.city === cityName);
+            if (fallback) combinedCities.push(fallback);
+          }
         });
 
-        console.log("Final cities to display:", finalCities);
+        // Take first 4 cities for display
+        const finalCities = combinedCities.slice(0, 4);
         setCities(finalCities);
       } catch (err: any) {
         console.error("Failed to fetch cities from API:", err);
@@ -133,14 +103,7 @@ export function FeaturedCities() {
     fetchCitiesFromAPI();
   }, []);
 
-  // Helper function to count tours per city
-  const countToursPerCity = (data: any[], cityName: string) => {
-    // Count how many active tours are in this city
-    const cityTours = data.filter(
-      (item: any) => item.city === cityName && item.isActive !== false
-    );
-    return cityTours.length;
-  };
+
 
   // Helper function to get country based on city
   const getCountryFromCity = (city: string) => {
@@ -232,7 +195,7 @@ export function FeaturedCities() {
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
               <Link
-                href={`/tours/${city.tourData?._id}`}
+                href={`/tours/${city._id}`}
                 className="block h-full"
               >
                 <div className="aspect-[4/5] relative">

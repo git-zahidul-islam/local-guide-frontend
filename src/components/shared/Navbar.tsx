@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { MapPin, Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
+import { Skeleton } from "../ui/skeleton";
 import Link from "next/link";
 import { useAuth } from "@/actions/useAuth";
 import Image from "next/image";
@@ -26,7 +27,14 @@ export function Navbar() {
                 LocalGuide
               </span>
             </Link>
-            <div className="text-gray-500">Loading...</div>
+            <div className="hidden md:flex items-center space-x-6">
+              <Skeleton className="h-8 w-20 bg-gray-300" />
+              <Skeleton className="h-8 w-20 bg-gray-300" />
+              <Skeleton className="h-8 w-20 bg-gray-300" />
+              <Skeleton className="h-8 w-20 bg-gray-300" />
+              <Skeleton className="h-8 w-20 bg-gray-300" />
+            </div>
+            <Skeleton className="md:hidden h-6 w-6" />
           </div>
         </div>
       </nav>
@@ -159,7 +167,7 @@ export function Navbar() {
                   onClick={handleLogout}
                   variant="primary"
                   size="sm"
-                  className="text-gray-700 hover:text-secondary"
+                  className="text-gray-700"
                 >
                   Logout
                 </Button>

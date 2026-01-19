@@ -20,6 +20,12 @@ export interface Listing {
   updatedAt: string;
 }
 
+export interface FeaturedCity {
+  _id: string;
+  city: string;
+  image: string;
+}
+
 // Cache for listings - automatically revalidates when tag is invalidated
 export const getListings = cache(async (): Promise<Listing[]> => {
   try {
@@ -44,6 +50,54 @@ export const getListings = cache(async (): Promise<Listing[]> => {
     return [];
   }
 });
+
+// Get featured cities for homepage
+export const getFeaturedCities = async (): Promise<FeaturedCity[]> => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/listing/public`,
+      {
+        next: {
+          tags: ["featured-cities"],
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch featured cities: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching featured cities:", error);
+    return [];
+  }
+};
+
+// Get popular guides for homepage
+export const getPopularGuides = async () => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/guide/popular-guide`,
+      {
+        next: {
+          tags: ["popular-guides"],
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch popular guides: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching popular guides:", error);
+    return [];
+  }
+};
 
 // Service functions for mutations
 export const listingService = {

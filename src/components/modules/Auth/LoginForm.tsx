@@ -183,7 +183,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
             name="email"
             label="Email Address"
             placeholder="you@example.com"
-            className="pl-12 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+            className="pl-12 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
             required
             disabled={formLoading || isLoading}
             value={formData.email}
@@ -201,7 +201,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
             name="password"
             label="Password"
             placeholder="Enter your password"
-            className="pl-12 pr-12"
+            className="pl-12 pr-12 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
             required
             disabled={formLoading || isLoading}
             value={formData.password}
@@ -257,7 +257,7 @@ export default function LoginForm({ redirectTo }: LoginFormProps) {
         Don't have an account?{" "}
         <Link
           href="/register"
-          className="text-primary hover:text-secondary font-semibold transition-colors"
+          className="text-secondary font-semibold transition-colors"
         >
           Sign up
         </Link>
